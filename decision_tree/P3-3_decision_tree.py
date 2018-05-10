@@ -71,7 +71,7 @@ class DecisionTree():
 
 
 if __name__ == "__main__":
-    tree = DecisionTree(7)
+    tree = DecisionTree(5)
     tree.build()
     tree.G.render("decision_tree.gv", view=True)
     # tree.G.source
