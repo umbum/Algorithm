@@ -1,6 +1,6 @@
 # n-dimension is supported.
 import math
-import random
+from random import seed, randint
 
 def k_means(data):
     _sum = get_sum_list(data)
@@ -56,12 +56,15 @@ def get_centroid(group):
     return list(map(lambda x: x/len(group), axis_sum_list))
 
 if __name__ == "__main__":
-    test1 = [(0, 2),
-             (0, 1),
-             (2, 0),
-             (1, 0)]
-    random.seed()
-    print(random.getrandbits())
-    # g1, g2 = k_means(test1)
-    print("[*] cluster1   :", g1)
-    print("[*] cluster2   :", g2)
+    test_basic = [(0, 2),
+                  (0, 1),
+                  (2, 0),
+                  (1, 0)]
+    seed()
+    test = []
+    for i in range(15):
+        test.append((randint(160, 180), randint(50, 80), randint(230, 285)))
+
+    g1, g2 = k_means(test)
+    print("[*] cluster1   : ", g1)
+    print("[*] cluster2   : ", g2)
